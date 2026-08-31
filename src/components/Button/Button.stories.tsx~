@@ -1,0 +1,380 @@
+import type { Meta, StoryObj } from '@storybook/react-vite';
+
+import { Button } from './Button';
+
+const meta = {
+  title: 'NEXUS/Components/Button',
+  component: Button,
+
+  parameters: {
+    layout: 'centered',
+
+    docs: {
+      description: {
+        component:
+          'NEXUS Button component. Use the controls to explore available button types, variants, sizes, loading and icon states.',
+      },
+    },
+  },
+
+  tags: ['autodocs'],
+
+  argTypes: {
+    type: {
+      control: 'select',
+      options: [
+        'Primary',
+        'Secondary',
+        'Accent',
+        'Negative',
+        'Positive',
+        'White',
+      ],
+      description: 'Defines the semantic color/type of the button.',
+    },
+
+    variant: {
+      control: 'select',
+      options: [
+        'Contained',
+        'Outlined',
+        'Text',
+      ],
+      description: 'Defines the visual treatment of the button.',
+    },
+
+    size: {
+      control: 'select',
+      options: [
+        'Large',
+        'Medium',
+        'Small',
+      ],
+      description: 'Defines the button size.',
+    },
+
+    loading: {
+      control: 'boolean',
+      description: 'Displays the loading state.',
+    },
+
+    onlyIcon: {
+      control: 'boolean',
+      description: 'Displays the button as an icon-only button.',
+    },
+
+    children: {
+      control: 'text',
+      description: 'Button label/content.',
+    },
+  },
+
+  args: {
+    type: 'Primary',
+    variant: 'Contained',
+    size: 'Large',
+    loading: false,
+    onlyIcon: false,
+    children: 'Continue',
+  },
+} satisfies Meta<typeof Button>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+/* -----------------------------
+   PRIMARY
+----------------------------- */
+
+export const Primary: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Primary contained button for the main action on a page.',
+      },
+      source: {
+        code: `<Button
+  type="Primary"
+  variant="Contained"
+  size="Large"
+>
+  Continue
+</Button>`,
+      },
+    },
+  },
+};
+
+/* -----------------------------
+   SECONDARY
+----------------------------- */
+
+export const Secondary: Story = {
+  args: {
+    type: 'Secondary',
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: 'Secondary button for supporting actions.',
+      },
+      source: {
+        code: `<Button
+  type="Secondary"
+  variant="Contained"
+  size="Large"
+>
+  Continue
+</Button>`,
+      },
+    },
+  },
+};
+
+/* -----------------------------
+   ACCENT
+----------------------------- */
+
+export const Accent: Story = {
+  args: {
+    type: 'Accent',
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: 'Accent button for highlighted actions.',
+      },
+      source: {
+        code: `<Button
+  type="Accent"
+  variant="Contained"
+  size="Large"
+>
+  Continue
+</Button>`,
+      },
+    },
+  },
+};
+
+/* -----------------------------
+   NEGATIVE
+----------------------------- */
+
+export const Negative: Story = {
+  args: {
+    type: 'Negative',
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: 'Negative button for destructive or high-risk actions.',
+      },
+      source: {
+        code: `<Button
+  type="Negative"
+  variant="Contained"
+  size="Large"
+>
+  Delete
+</Button>`,
+      },
+    },
+  },
+};
+
+/* -----------------------------
+   POSITIVE
+----------------------------- */
+
+export const Positive: Story = {
+  args: {
+    type: 'Positive',
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: 'Positive button for successful or confirming actions.',
+      },
+      source: {
+        code: `<Button
+  type="Positive"
+  variant="Contained"
+  size="Large"
+>
+  Confirm
+</Button>`,
+      },
+    },
+  },
+};
+
+/* -----------------------------
+   OUTLINED
+----------------------------- */
+
+export const Outlined: Story = {
+  args: {
+    variant: 'Outlined',
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: 'Outlined button for secondary or lower-emphasis actions.',
+      },
+      source: {
+        code: `<Button
+  type="Primary"
+  variant="Outlined"
+  size="Large"
+>
+  Continue
+</Button>`,
+      },
+    },
+  },
+};
+
+/* -----------------------------
+   TEXT
+----------------------------- */
+
+export const Text: Story = {
+  args: {
+    variant: 'Text',
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: 'Text button for low-emphasis actions.',
+      },
+      source: {
+        code: `<Button
+  type="Primary"
+  variant="Text"
+  size="Large"
+>
+  Continue
+</Button>`,
+      },
+    },
+  },
+};
+
+/* -----------------------------
+   LOADING
+----------------------------- */
+
+export const Loading: Story = {
+  args: {
+    loading: true,
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: 'Loading state used when an action is being processed.',
+      },
+      source: {
+        code: `<Button
+  type="Primary"
+  variant="Contained"
+  size="Large"
+  loading
+>
+  Continue
+</Button>`,
+      },
+    },
+  },
+};
+
+/* -----------------------------
+   MEDIUM
+----------------------------- */
+
+export const Medium: Story = {
+  args: {
+    size: 'Medium',
+    children: 'Continue',
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: 'Medium-sized NEXUS button.',
+      },
+      source: {
+        code: `<Button
+  type="Primary"
+  variant="Contained"
+  size="Medium"
+>
+  Continue
+</Button>`,
+      },
+    },
+  },
+};
+
+/* -----------------------------
+   SMALL
+----------------------------- */
+
+export const Small: Story = {
+  args: {
+    size: 'Small',
+    children: 'Continue',
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: 'Small-sized NEXUS button.',
+      },
+      source: {
+        code: `<Button
+  type="Primary"
+  variant="Contained"
+  size="Small"
+>
+  Continue
+</Button>`,
+      },
+    },
+  },
+};
+
+/* -----------------------------
+   WHITE
+----------------------------- */
+
+export const White: Story = {
+  args: {
+    type: 'White',
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: 'White button intended for use on dark or colored backgrounds.',
+      },
+      source: {
+        code: `<Button
+  type="White"
+  variant="Contained"
+  size="Large"
+>
+  Continue
+</Button>`,
+      },
+    },
+  },
+};

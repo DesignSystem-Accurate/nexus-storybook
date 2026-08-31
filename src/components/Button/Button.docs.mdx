@@ -1,0 +1,55 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="NEXUS/Components/Button/Developer Code" />
+
+# Button
+
+Developer implementation reference for the NEXUS Button component.
+
+## HTML
+
+<Source
+  language="html"
+  code={`<button class="nexus-button nexus-button--primary nexus-button--contained nexus-button--large">
+  <span class="nexus-button__label">Large</span>
+</button>`}
+/>
+
+## CSS
+
+<Source
+  language="css"
+  code={`.nexus-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nexus-button--primary {
+  background: #2453d4;
+  color: #ffffff;
+}
+
+.nexus-button--contained {
+  border: none;
+}
+
+.nexus-button--large {
+  min-height: 44px;
+  padding: 0 24px;
+  font-size: 16px;
+}
+
+.nexus-button--medium {
+  min-height: 40px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.nexus-button--small {
+  min-height: 36px;
+  padding: 0 16px;
+  font-size: 13px;
+}`}
+/>
